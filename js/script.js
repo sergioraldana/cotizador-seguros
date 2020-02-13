@@ -1,25 +1,52 @@
-var nombreCompleto = prompt("Por favor ingrese el nombre completo:", "Nombres y apellidos");
-var diaNacimiento = prompt("Ingrese el día de nacimiento", "Ejemplo: Si nació el 22 de enero, solamente ingresar 22");
-var mesNacimiento = prompt("Ingrese el mes de nacimiento", "Ejemplo: Si nació en enero, solamente ingresar 1 porque es el mes 1");
-var anioNacimiento = prompt("Ingrese el año de nacimiento", "Ejemplo: Si nació el 22 de enero de 1987, solamente ingresar 1987");
+//El precio base de un seguro es de Q250.00
+var precioBase = 250;
 
-var conyuge = prompt("¿Tiene cónyuge?", "SI/NO");
-var hijos = prompt("¿Tiene hijos?", "SI/NO");
-var cantidadHijos = prompt("Ingrese la cantidad de hijos menores de 21 años:", "Por favor ingrese únicamente números");
+//Existen 3 tipos de recargo:
+// 1 El cargo edad varía con la edad del asegurado: var recargoEdad
 
-const precioBase = 250;
+var edadAsegurado = 40;
+var mayoriaEdad;
+var elegible;
+var recargoEdad;
 
+// 2. El cargo por conyugue es varía con la edad del conyuge var recargoConyuge
+var conjuge;
+var recargoConyuge;
 
-comision = precioBase * 0.30;
+// 3.recargo por Hijos varía por cantidad de hijos menores de 21 años
+var hijos;
+var numeroHijos;
+var recargoHijos;
 
-// El siguiente es un comentario.
-// Por favor no elimine los caracteres // que se encuentran al inicio.
+//Calculo de Total a pagar
+var totalPagar;
 
-// En la siguiente variable usted debe calcular los cargos correspondientes.
-// Puede crear la cantidad de variables necesarias para calcular cada uno
-// de los recargos que sean necesarios
-recargos = 0;
+//Pregunta la edad para saber si es elegible a seguro
+if (edadAsegurado >= 18) {
+  var mayoriaEdad = true;
+} else {
+  var mayoriaEdad = false;
+}
+// Si no es mayor de edad no se puede asegurar
+if (mayoriaEdad === true) {
+  var elegible = true;
+} else {
+  var elegible = false;
+}
 
+// Si no es elegible salir del sistema
+//PENDIENTE
 
-totalPagar = precioBase + comision + recargos;
-document.write(totalPagar);
+// Cálculo de cargo por edad si es menor de 21
+if (edadAsegurado <= 18) {
+  var recargoEdad = 0;
+} else {
+  var recargoEdad = 0.1;
+}
+
+// las siguientes llamadas a consola sirven para pruebas
+console.log(precioBase);
+console.log(edadAsegurado);
+console.log(mayoriaEdad)
+console.log(elegible)
+console.log(recargoEdad)
